@@ -10,10 +10,10 @@ function handleSubmit(event) {
         elements: { email, password },
     } = event.currentTarget
 
-    if (email.value === '') {
+    if (!email.value.trim()) {
         return alert('Будь ласка, заповніть Email')
     }
-    if (password.value === '') {
+    if (!password.value.trim()) {
         return alert('Будь ласка, заповніть Password!')
     }
     const userDetails = { email: email.value, Password: password.value }
@@ -21,3 +21,4 @@ function handleSubmit(event) {
     console.log(userDetails)
     event.currentTarget.reset()
 }
+
